@@ -1,19 +1,11 @@
-const http = require('http')
+//Usado apenas para iniciar o servidor.
+import app from './src/app.js'
 
-const port = 3000
+             //dessa maneira,se estiver em produção executa na porta que estiver, caso contrário na porta 3000;
+const port = process.env.PORT || 3000;
 
-const rotas = {
-    '/':'Acessando a página Inicial',
-    '/livros':'Acessando a página de Livros',
-    '/autores':'Acessando a página de autores',
-    '/sobre':'Informações sobre o projeto' 
-}
 
-const server = http.createServer((request,response) => {
-    response.writeHead(200,{'Content-Type': 'text/plain'})
-    response.end(rotas[request.url])
-})
 
-server.listen(port,() => {
+app.listen(port,() => {
     console.log(`Servidor rodando em http://localhost:${port}`)
 })
