@@ -57,3 +57,24 @@ test	t	Executa o script de teste especificado no package.json
 --save-dev	-D	Salva o módulo ao instalar, porém como uma dependência de desenvolvimento
 
 Utilizando o npm help, lista os comandos acima.
+
+=> Utilizando o Express.(não fazer com o método nativo do Node.js)
+
+https://expressjs.com/pt-br/
+
+Criação da pasta 'Src'
+
+// Criação da API de LIVROS
+
+GET => /livros -> buscar relação de livros
+GET => /livros/{id} -> buscar livro específico
+POST => /livros -> criar um novo livro
+PUT => /livros/{id} -> editar algumas informações
+DELETE => /livros{id} -> excluir um livro
+
+Create - criando recurso, método 'post'
+Read - utilizando método 'get'
+Update - atualizar um livro 'put'
+Delete - exclusão.
+
+
