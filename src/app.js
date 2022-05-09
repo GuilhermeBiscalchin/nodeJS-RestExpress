@@ -1,28 +1,41 @@
 import express from "express";
 
+import db from "./config/dbConnect.js";
+import livros from './model/Livro.js'
+
+
+db.on('error',console.log.bind(console,'Erro de Conexão!'))
+db.once('open', () => {
+    console.log('Está conectado com o banco de dados MongoDB!')
+})
+
 
 const app = express()
 
 
 app.use(express.json())
 
-const livros = [ 
-    {
-        id: 1,
-        "Titulo":"Senhor dos Aneis"
-    },
-    {
-        id:2,
-        "Titulo":"Hobbit"
-    }
-]
+//  const livros = [ 
+//      {
+//          id: 1,
+//          "Titulo":"Senhor dos Aneis"
+//      },
+//      {
+//          id:2,
+//          "Titulo":"Hobbit"
+//      }
+//  ]
 
 app.get('/',(request,response) => {
     response.status(200).send("Arquivo sendo executado em status OK")
 })
 
 app.get('/livros',(req,res) => {
-    res.status(200).json(livros)
+
+    livros.find((err,livros) => {
+        res.status(200).json(livros)
+    })    
+
 })
 
 app.get('/livros/:id',(request,response) => {

@@ -78,3 +78,58 @@ Update - atualizar um livro 'put'
 Delete - exclusão.
 
 
+=> Banco Relacional X noSQL
+
+=== banco relacional ===
+
+    - Utilização de tabelas
+    - linhas e colunas
+    - chaves primárias e estrangeiras
+
+Algunas bancos relacionais
+* MySQL
+* PostgreSQL
+* SQL Server
+
+Structured Query Language, linguagem de consulta estruturada
+
+=== Banco noSQL ===
+    
+    - Dados não precisam ser divididos em tabelas
+    - Todos os dados podem estar armazenados em uma mesma estrutura
+
+Utilizado para BigData.
+
+    - Tipos de armazenamento
+        - Documentos
+        - Chave-valor
+        - Grafos
+        - Colunas amplas
+
+
+ ** MongoDB **
+
+- Atlas => Serviço em nuvem, o que vai ser utilizado no curso
+- Enterprise Advanced => Versão paga
+- Community Edition => Instalar no computador.
+
+=> Passo a passo para criação do banco de dados no MongoDB
+
+    - Criação do Projeto com o Cluster
+    - Criar a conexão onde o banco de dados vai ser hospedado
+    - Criar o Collections
+    - Onde vai ser inserido os dados do objeto.
+
+=> Configurando no projeto o banco de dados.
+
+    - Utilizar a biblioteca 'Mongoossejs'
+    - No próprio Atlas, gera a 'string' de conexão necessária para linkar o projeto com o banco de dados.
+    - Na String, vai estar escrito 'myFirstDatabase', aqui coloco o nome do database que criei no mongoDB.
+    
+=> Fazendo o link com o banco de livros 'schema'
+
+    - Fazendo uma pasta modelo.
+    - Fazer o objeto, com as informações do objeto, igual a typeScript, definindo o tipo e colocando com required,para ser obrigatório.
+    - No arquivo se passando o 'mongoose' com o model,e a string com o nome, cria no banco de dados, com o link que fez anteriormente.
+
+    
