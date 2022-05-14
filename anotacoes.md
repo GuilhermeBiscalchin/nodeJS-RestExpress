@@ -132,4 +132,29 @@ Utilizado para BigData.
     - Fazer o objeto, com as informações do objeto, igual a typeScript, definindo o tipo e colocando com required,para ser obrigatório.
     - No arquivo se passando o 'mongoose' com o model,e a string com o nome, cria no banco de dados, com o link que fez anteriormente.
 
-    
+ ** Evoluindo API **
+ => GET
+
+    Fazendo Camadas, com o controller => controlado de entrar de requisição e o banco de dados.
+Realizando com Classe e um método estatico, passando as informações que foi apresentada no get (/livros)
+
+Arquivo de rotas, a cada chamada no controller, com a requisição.
+
+Centralizar o arquivo de rotas, com o arquivo index.js => centralizar todas as rotas que for chamada.
+
+=> POST
+
+ No Controller, mesmo procedimento do método GET.
+Faz uma nova variável, baseado no modelo que foi criado, de como tem que ser cadastrado o objeto, instanciando o modelo.
+EX: let livro = new livros(req.body)
+E persistindo o livro no banco de dados, passando um err, para prever o erro.
+
+Incluindo na Rota a função criada para cadastrar o livro.
+
+Nas rotas, vou escrever o método post.
+
+=> PUT
+
+    Atualizar, no Controler, fazer a mesma lógica para atualizar o livro.
+
+ Fazer o obter Livro por ID.  
