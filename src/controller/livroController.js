@@ -4,7 +4,9 @@ import livros from "../model/Livro.js";
 class LivroController {
 
     static listarLivros = (req,res) => {
-        livros.find((err,livros) => {
+        livros.find()
+        .populate('autor')
+        .exec((err,livros) => {
             res.status(200).json(livros)
         })   
     }
@@ -13,7 +15,9 @@ class LivroController {
     static listarLivroPorId = (req,res) => {
         const id = req.params.id;
 
-        livros.findById(id,(err,livros) => {
+        livros.findById(id)
+        .populate('autor','nome')
+        .exec((err,livros) => {
             if(err){
                 res.status(400).send({message: `${err.message} - Id do livro não localizado!`})
             } else{
@@ -57,6 +61,18 @@ class LivroController {
                 res.status(200).send({message: 'Livro removido com sucesso!'})
             }else{
                 res.status(500).send({message: `${err.message} - não excluido!`})
+            }
+        })
+    }
+
+    static listarLivroPorIdioma = (req,res) => {
+        const idioma = req.query.idioma
+        
+        livros.find({'idioma': idioma},{},(err,livros) => {
+            if(!err){
+                res.status(200).send(livros)
+            }else{
+                res.status(500).send(err.message)
             }
         })
     }

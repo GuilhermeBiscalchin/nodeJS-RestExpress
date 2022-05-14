@@ -158,3 +158,32 @@ Nas rotas, vou escrever o método post.
     Atualizar, no Controler, fazer a mesma lógica para atualizar o livro.
 
  Fazer o obter Livro por ID.  
+
+ ** Acrescentando um novo Schema **
+
+ Colocando mais um objeto, para se relacionar com os livros criado. vários Controller.
+
+ 1º Passo -> Criação de um Model com o Autor.
+ 2º Passo -> Criação de um controller com o Autores.
+ 3º Passo -> Criação de um arquivo de Rotas dos autores.
+ 4º Passo -> arquivo 'index.js' importar a rota de autores.
+
+ Associando um livro ao autor.
+
+ => No model, alterando o modelo de tipo 'String', para passar a ser uma referência.
+ EX: type:mongoose.Schema.Types.ObjectId, ref:'autores'
+
+ => Consulta diferenciada.
+
+ para realizar a busca além do ID.
+
+ get => página/livros/busca?editora=Alura
+
+livros/busca => rota
+? => qual o parâmetro que está para buscar.
+editora => parâmetro de busca
+= => nome que vai ser editora.
+Alura => nome que está cadastrado para busca.
+
+
+

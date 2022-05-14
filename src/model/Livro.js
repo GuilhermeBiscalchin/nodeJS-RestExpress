@@ -4,7 +4,7 @@ const livroSchema = new mongoose.Schema(
     {
         id:{type:String},
         titulo:{type:String, required:true},
-        Autor:{type:String, required:true},
+        autor:{type:mongoose.Schema.Types.ObjectId,ref:'autores',required:true},
         idioma:{type:String, required:true},
         paginnas:{type:Number}
     }
